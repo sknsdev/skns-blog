@@ -1,30 +1,28 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="bg-gray-700 min-h-screen text-white">
+    <headerNav />
+    <sidebarNav />
+    <router-view />
+  </div>
 </template>
 
+<script>
+import headerNav from "./components/headerNav.vue";
+import sidebarNav from "./components/sidebarNav.vue";
+export default {
+  components: {
+    headerNav,
+    sidebarNav,
+  },
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.btn {
+  @apply bg-cyan-700 duration-300 font-semibold py-2 px-4 rounded-2xl inline-block shadow-sm cursor-pointer;
 }
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+.btn:hover {
+  @apply bg-cyan-600;
 }
 </style>
